@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Σαρρής Χριστοφόρος - Ηλεκτρολόγος Εγκαταστάσεων</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f4f4f4; color: #333; }
+    header { background: #1e90ff; color: white; padding: 20px 0; text-align: center; }
+    .container { padding: 20px; max-width: 1000px; margin: auto; background: white; }
+    h1, h2 { color: #1e90ff; }
+    ul { list-style: none; padding: 0; }
+    ul li::before { content: "\2714\0020"; color: #1e90ff; }
+    footer { background: #1e90ff; color: white; text-align: center; padding: 15px 0; margin-top: 30px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+    .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    .contact-button { display: inline-block; background: #1e90ff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin: 5px 10px 0 0; }
+    iframe { width: 100%; border: 0; border-radius: 8px; margin-top: 20px; height: 300px; }
+    form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+    button { padding: 10px; background: #1e90ff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0077cc; }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Σαρρής Χριστοφόρος</h1>
+    <p>Ηλεκτρολόγος Εγκαταστάσεων - Άγιος Νικόλαος Κρήτης</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Υπηρεσίες</h2>
+      <ul>
+        <li>Ηλεκτρολογικές Εγκαταστάσεις</li>
+        <li>Συστήματα Συναγερμού</li>
+        <li>Εγκατάσταση Καμερών Ασφαλείας (CCTV)</li>
+        <li>Αυτοματισμοί – KNX</li>
+        <li>Έξυπνο Σπίτι – Smart Home</li>
+        <li>Φωτοβολταϊκά Συστήματα</li>
+        <li>Ενεργειακές Αναβαθμίσεις</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Φωτογραφίες Έργων</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/400x300?text=Έργο+1" alt="Έργο 1">
+        <img src="https://via.placeholder.com/400x300?text=Έργο+2" alt="Έργο 2">
+        <img src="https://via.placeholder.com/400x300?text=Έργο+3" alt="Έργο 3">
+      </div>
+    </section>
+
+    <section>
+      <h2>Σχετικά με εμένα</h2>
+      <p>
+        Είμαι πιστοποιημένος ηλεκτρολόγος εγκαταστάσεων με πολυετή εμπειρία και τεχνογνωσία.
+        Προσφέρω αξιόπιστες λύσεις για οικιακούς και επαγγελματικούς χώρους, με έμφαση στην ποιότητα,
+        την ασφάλεια και την εξυπηρέτηση.
+      </p>
+    </section>
+
+    <section>
+      <h2>Επικοινωνία</h2>
+      <p>📍 Άγιος Νικόλαος Κρήτης, 72100</p>
+      <p>📞 <a href="tel:+306948598823">+30 694 859 8823</a></p>
+      <p>📧 <a href="mailto:sarrisxristoforos@gmail.com">sarrisxristoforos@gmail.com</a></p>
+      <a class="contact-button" href="tel:+306948598823">Καλέστε τώρα</a>
+      <a class="contact-button" href="https://wa.me/306948598823" target="_blank">WhatsApp</a>
+      <a class="contact-button" href="viber://chat?number=+306948598823">Viber</a>
+
+      <form action="mailto:sarrisxristoforos@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Όνομα" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Μήνυμα" required></textarea>
+        <button type="submit">Αποστολή</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Χάρτης</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.9245807404125!2d25.724523915446188!3d35.19114678030564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5b0dc3733efb%3A0x59b7b2f3a553ed56!2z4oCezpXOtc6xzq_Ouc6zIM6fzrnOrM65zr3PhM6uzrHOu86zzrXPhM65zr_PgiDPhM68zrHOu865zrfPhM65zr_OvQ!5e0!3m2!1sel!2sgr!4v1711549131147" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Σαρρής Χριστοφόρος. Όλα τα δικαιώματα διατηρούνται.
+  </footer>
+</body>
+</html>
