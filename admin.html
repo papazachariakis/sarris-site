@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Διαχείριση Έργων</title>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; padding: 30px; }
+    .login-box, .upload-box { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, textarea, button { width: 100%; margin-top: 10px; padding: 10px; }
+    h2 { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="login-box" id="loginBox">
+    <h2>Σύνδεση Διαχειριστή</h2>
+    <input type="text" id="username" placeholder="Όνομα Χρήστη" />
+    <input type="password" id="password" placeholder="Κωδικός" />
+    <button onclick="login()">Είσοδος</button>
+  </div>
+
+  <div class="upload-box" id="uploadBox" style="display:none">
+    <h2>Προσθήκη Νέου Έργου</h2>
+    <form id="uploadForm" enctype="multipart/form-data" method="post" action="upload.php">
+      <input type="file" name="image" required />
+      <textarea name="description" placeholder="Περιγραφή έργου" required></textarea>
+      <button type="submit">Ανέβασμα</button>
+    </form>
+    <p id="response"></p>
+  </div>
+
+  <script>
+    const CORRECT_USER = "admin";
+    const CORRECT_PASS = "1234"; // άλλαξέ το πριν το ανεβάσεις
+
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (user === CORRECT_USER && pass === CORRECT_PASS) {
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('uploadBox').style.display = 'block';
+      } else {
+        alert('Λάθος στοιχεία.');
+      }
+    }
+  </script>
+</body>
+</html>
