@@ -2,340 +2,187 @@
 <html lang="el">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Σαρρής Χριστοφόρος - Δίγλωσση Ιστοσελίδα</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #1B5E20;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px 20px;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      margin-top: -30px;
-    }
-    nav {
-      text-align: right;
-      margin: 10px 20px 0 0;
-    }
-    select {
-      font-size: 1em;
-      padding: 5px;
-      border-radius: 5px;
-    }
-
-    /* Κρύβουμε από προεπιλογή όλα τα τμήματα κειμένου */
-    .lang {
-      display: none;
-    }
-    /* Προεπιλεγμένη γλώσσα: Ελληνικά (lang-el) */
-    .lang.lang-el {
-      display: block;
-    }
-
-    h2 {
-      color: #1B5E20;
-      border-bottom: 2px solid #1B5E20;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      height: 200px;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      background: #eef5ff;
-      padding: 10px;
-      border-radius: 10px;
-      margin: 5px 0;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    }
-    .contact-button {
-      display: inline-block;
-      background: #1B5E20;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin: 5px 10px 0 0;
-      transition: background 0.3s;
-    }
-    .contact-button:hover {
-      background: #388E3C;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    input, textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px;
-      background: #1B5E20;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #388E3C;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    footer {
-      background: #1B5E20;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      border-radius: 0 0 10px 10px;
-    }
-
-    /* Πρόσθετα στυλ για τις κάρτες υπηρεσιών, κ.λπ. */
-    .service-card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-    .profile-section {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-    .profile-img {
-      border-radius: 10px;
-      width: 200px;
-      height: auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .cert-badge {
-      background: #1B5E20;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 14px;
-      display: inline-block;
-      margin: 5px 5px 5px 0;
-    }
-    .doc-section {
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .doc-item {
-      text-align: center;
-      flex: 1;
-    }
-    .doc-item img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-    .smart-home-img {
-      width: 100%;
-      border-radius: 10px;
-      height: 300px;
-      object-fit: cover;
-      margin-top: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .tech-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 15px 0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="description" content="Σαρρής Χριστοφόρος – Πιστοποιημένος ηλεκτρολόγος στον Άγιο Νικόλαο Κρήτης. Ηλεκτρολογικές εγκαταστάσεις, αυτοματισμοί KNX, φωτοβολταϊκά, smart home."/>
+  <title>Σαρρής Χριστοφόρος | Ηλεκτρολόγος – Αυτοματισμοί – Φωτοβολταϊκά</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <!-- ΚΕΦΑΛΙΔΑ -->
-  <header>
-    <h1>⚡ Σαρρής Χριστοφόρος</h1>
-    <p>Ηλεκτρολόγος Εγκαταστάσεων – Αυτοματισμοί – Φωτοβολταϊκά</p>
-  </header>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Κύρια πλοήγηση">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="nav-brand-icon" aria-hidden="true">⚡</span>
+        <span>Σαρρής Χριστοφόρος</span>
+      </a>
 
-  <!-- MENU ΕΠΙΛΟΓΗΣ ΓΛΩΣΣΑΣ -->
-  <nav>
-    <label for="languageSelector">Γλώσσα / Language: </label>
-    <select id="languageSelector" onchange="changeLanguage(this.value)">
-      <option value="lang-el">Ελληνικά</option>
-      <option value="lang-en">English</option>
-    </select>
+      <button class="nav-toggle" aria-label="Μενού" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#services" data-nav-el="Υπηρεσίες" data-nav-en="Services">Υπηρεσίες</a></li>
+        <li><a href="#smart-home" data-nav-el="Smart Home" data-nav-en="Smart Home">Smart Home</a></li>
+        <li><a href="#inspections" data-nav-el="Επανέλεγχοι" data-nav-en="Inspections">Επανέλεγχοι</a></li>
+        <li><a href="#gallery" data-nav-el="Έργα" data-nav-en="Projects">Έργα</a></li>
+        <li><a href="#about" data-nav-el="Σχετικά" data-nav-en="About">Σχετικά</a></li>
+        <li><a href="#contact" data-nav-el="Επικοινωνία" data-nav-en="Contact">Επικοινωνία</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Επιλογή γλώσσας">
+          <button type="button" class="active" data-lang="lang-el">EL</button>
+          <button type="button" data-lang="lang-en">EN</button>
+        </div>
+        <a class="nav-cta" href="tel:+306948598823" data-nav-el="Κλήση" data-nav-en="Call">Κλήση</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- ΠΕΡΙΕΧΟΜΕΝΟ (container) -->
-  <div class="container">
+  <!-- ═══════════════ GREEK ═══════════════ -->
+  <div class="lang lang-el">
 
-    <!-- ============= [lang-el]: Ελληνικά ============= -->
-    <div class="lang lang-el">
+    <header class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-badge">Άγιος Νικόλαος Κρήτης</span>
+        <h1>Σαρρής Χριστοφόρος</h1>
+        <p>Ηλεκτρολόγος Εγκαταστάσεων – Αυτοματισμοί – Φωτοβολταϊκά</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#contact">Επικοινωνήστε μαζί μου</a>
+          <a class="btn btn-outline" href="#services">Οι Υπηρεσίες μου</a>
+        </div>
+      </div>
+    </header>
 
-      <!-- Έξυπνο Σπίτι (Greek) -->
-      <section>
-        <h2>Έξυπνο Σπίτι – Smart Home</h2>
-        <div class="service-card">
-          <p>Ολοκληρωμένες λύσεις για έξυπνο σπίτι με εφαρμογές και φωνητική εντολή. Μετατρέψτε το σπίτι σας σε ένα σύγχρονο, αυτόματο και ενεργειακά αποδοτικό χώρο με τις τελευταίες τεχνολογίες αυτοματισμού.</p>
+    <main>
 
-          <img src="header-smart-house.jpg" 
-     class="smart-home-img" />
+      <!-- Smart Home -->
+      <section data-section="smart-home">
+        <div class="section-header reveal">
+          <span class="section-label">Αυτοματισμοί</span>
+          <h2>Έξυπνο Σπίτι – Smart Home</h2>
+          <p>Ολοκληρωμένες λύσεις με εφαρμογές και φωνητική εντολή για ένα σύγχρονο, αυτόματο και ενεργειακά αποδοτικό σπίτι.</p>
+        </div>
 
-
-          <h3 style="margin-top: 25px;">Πού μπορούμε να εφαρμόσουμε αυτοματισμούς:</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/4277/4277376.png"
-                   alt="Φωτισμός" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Έξυπνος φωτισμός (εφαρμογή, χρονοπρογραμματισμός, αισθητήρες κίνησης)
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/1629/1629571.png"
-                   alt="Πρίζες" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Έξυπνες πρίζες και ηλεκτρικές συσκευές
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/6511/6511850.png"
-                   alt="Κουρτίνες" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Αυτόματες κουρτίνες και τζάμια
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/4276/4276167.png"
-                   alt="Θέρμανση" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Έξυπνη θέρμανση και κλιματισμός
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/2730/2730421.png"
-                   alt="Ήχος" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Συστήματα ήχου και ψυχαγωγίας
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/2977/2977123.png"
-                   alt="Ασφάλεια" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Συστήματα ασφαλείας και παρακολούθησης
-            </li>
-          </ul>
-
-          <h3>Τεχνολογίες που χρησιμοποιούμε:</h3>
-          <div class="tech-badges">
-            <span class="cert-badge">KNX</span>
-            <span class="cert-badge">Z-Wave</span>
-            <span class="cert-badge">Zigbee</span>
-            <span class="cert-badge">Wi-Fi</span>
-            <span class="cert-badge">Google Home</span>
-            <span class="cert-badge">Amazon Alexa</span>
-            <span class="cert-badge">Apple HomeKit</span>
-            <span class="cert-badge">Home Assistant</span>
+        <div class="smart-intro reveal">
+          <img src="header-smart-house.jpg" alt="Έξυπνο σπίτι" class="smart-intro-img"/>
+          <div class="smart-intro-text">
+            <p>Μετατρέψτε το σπίτι σας σε ένα σύγχρονο, αυτόματο και ενεργειακά αποδοτικό χώρο με τις τελευταίες τεχνολογίες αυτοματισμού.</p>
           </div>
         </div>
-      </section>
 
-      <!-- Υπηρεσίες (Greek) -->
-      <section>
-        <h2>Υπηρεσίες</h2>
-        <div class="service-card">
-          <h3>Ηλεκτρολογικές Εγκαταστάσεις</h3>
-          <p>Πλήρης ηλεκτρολογικές εγκαταστάσεις κατοικιών και επιχειρήσεων σύμφωνα με τις προδιαγραφές ασφαλείας.</p>
-          <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Ηλεκτρολογικές Εγκαταστάσεις"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
+        <h3 class="section-subtitle">Πού μπορούμε να εφαρμόσουμε αυτοματισμούς</h3>
+        <div class="feature-grid reveal">
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/4277/4277376.png" alt=""/></div>
+            <span>Έξυπνος φωτισμός (εφαρμογή, χρονοπρογραμματισμός, αισθητήρες κίνησης)</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/1629/1629571.png" alt=""/></div>
+            <span>Έξυπνες πρίζες και ηλεκτρικές συσκευές</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/6511/6511850.png" alt=""/></div>
+            <span>Αυτόματες κουρτίνες και τζάμια</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/4276/4276167.png" alt=""/></div>
+            <span>Έξυπνη θέρμανση και κλιματισμός</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/2730/2730421.png" alt=""/></div>
+            <span>Συστήματα ήχου και ψυχαγωγίας</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/2977/2977123.png" alt=""/></div>
+            <span>Συστήματα ασφαλείας και παρακολούθησης</span>
+          </div>
         </div>
 
-        <div class="service-card">
-          <h3>Συστήματα Συναγερμού</h3>
-          <p>Εγκατάσταση και συντήρηση συστημάτων συναγερμού με ασύρματες και ενσύρματες τεχνολογίες.</p>
-          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Συστήματα Συναγερμού"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Κάμερες Ασφαλείας (CCTV)</h3>
-          <p>Συστήματα παρακολούθησης υψηλής ευκρίνειας με δυνατότητα απομακρυσμένης πρόσβασης.</p>
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Κάμερες Ασφαλείας"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Αυτοματισμοί – KNX</h3>
-          <p>Έξυπνες λύσεις αυτοματισμού για φώτα, κλιματισμό και συστήματα σκίασης.</p>
-          <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Αυτοματισμοί KNX"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Φωτοβολταϊκά Συστήματα</h3>
-          <p>Σχεδιασμός και εγκατάσταση φωτοβολταϊκών συστημάτων για οικιακή και επαγγελματική χρήση.</p>
-          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Φωτοβολταϊκά Συστήματα"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Ενεργειακές Αναβαθμίσεις</h3>
-          <p>Βελτιστοποίηση ενεργειακής απόδοσης με σύγχρονες τεχνολογίες και υλικά.</p>
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Ενεργειακές Αναβαθμίσεις"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
+        <h3 class="section-subtitle section-subtitle--spaced">Τεχνολογίες που χρησιμοποιούμε</h3>
+        <div class="tech-badges tech-badges--center reveal">
+          <span class="badge">KNX</span>
+          <span class="badge">Z-Wave</span>
+          <span class="badge">Zigbee</span>
+          <span class="badge">Wi-Fi</span>
+          <span class="badge">Google Home</span>
+          <span class="badge">Amazon Alexa</span>
+          <span class="badge">Apple HomeKit</span>
+          <span class="badge">Home Assistant</span>
         </div>
       </section>
 
-      <!-- Επανέλεγχοι Ηλεκτρολογικών Εγκαταστάσεων (Greek) -->
-      <section>
-        <h2>Επανέλεγχοι Ηλεκτρολογικών Εγκαταστάσεων</h2>
-        <div style="display: flex; gap: 20px; margin-bottom: 20px;">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-               alt="Έλεγχος Ηλεκτρολογικής Εγκατάστασης"
-               style="width: 300px; border-radius: 10px;" />
+      <!-- Services -->
+      <section data-section="services">
+        <div class="section-header reveal">
+          <span class="section-label">Τι προσφέρω</span>
+          <h2>Υπηρεσίες</h2>
+          <p>Ολοκληρωμένες ηλεκτρολογικές λύσεις για κατοικίες και επιχειρήσεις.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ηλεκτρολογικές Εγκαταστάσεις"/>
+            <div class="card-body">
+              <h3>Ηλεκτρολογικές Εγκαταστάσεις</h3>
+              <p>Πλήρης ηλεκτρολογικές εγκαταστάσεις κατοικιών και επιχειρήσεων σύμφωνα με τις προδιαγραφές ασφαλείας.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Συστήματα Συναγερμού"/>
+            <div class="card-body">
+              <h3>Συστήματα Συναγερμού</h3>
+              <p>Εγκατάσταση και συντήρηση συστημάτων συναγερμού με ασύρματες και ενσύρματες τεχνολογίες.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Κάμερες Ασφαλείας"/>
+            <div class="card-body">
+              <h3>Κάμερες Ασφαλείας (CCTV)</h3>
+              <p>Συστήματα παρακολούθησης υψηλής ευκρίνειας με δυνατότητα απομακρυσμένης πρόσβασης.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Αυτοματισμοί KNX"/>
+            <div class="card-body">
+              <h3>Αυτοματισμοί – KNX</h3>
+              <p>Έξυπνες λύσεις αυτοματισμού για φώτα, κλιματισμό και συστήματα σκίασης.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Φωτοβολταϊκά"/>
+            <div class="card-body">
+              <h3>Φωτοβολταϊκά Συστήματα</h3>
+              <p>Σχεδιασμός και εγκατάσταση φωτοβολταϊκών συστημάτων για οικιακή και επαγγελματική χρήση.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ενεργειακές Αναβαθμίσεις"/>
+            <div class="card-body">
+              <h3>Ενεργειακές Αναβαθμίσεις</h3>
+              <p>Βελτιστοποίηση ενεργειακής απόδοσης με σύγχρονες τεχνολογίες και υλικά.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Inspections -->
+      <section data-section="inspections">
+        <div class="section-header reveal">
+          <span class="section-label">Πιστοποιητικά</span>
+          <h2>Επανέλεγχοι Ηλεκτρολογικών Εγκαταστάσεων</h2>
+        </div>
+
+        <div class="inspection-block reveal">
+          <img class="inspection-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Έλεγχος Ηλεκτρολογικής Εγκατάστασης"/>
           <div>
-            <p>
-              Αναλαμβάνω υπεύθυνα την έκδοση Πιστοποιητικών Ηλεκτρολόγου (Υ.Δ.Ε.) σύμφωνα με τον κανονισμό <strong>ΕΛΟΤ HD 384</strong>, για οικιακές και επαγγελματικές εγκαταστάσεις.
-              Οι επανέλεγχοι είναι απαραίτητοι για:
-            </p>
-            <ul>
+            <p>Αναλαμβάνω υπεύθυνα την έκδοση Πιστοποιητικών Ηλεκτρολόγου (Υ.Δ.Ε.) σύμφωνα με τον κανονισμό <strong>ΕΛΟΤ HD 384</strong>, για οικιακές και επαγγελματικές εγκαταστάσεις. Οι επανέλεγχοι είναι απαραίτητοι για:</p>
+            <ul class="check-list">
               <li>Νέα σύνδεση ρεύματος</li>
               <li>Επανασύνδεση ρεύματος λόγω διακοπής</li>
               <li>Αλλαγή ονόματος σε μετρητή</li>
@@ -344,248 +191,286 @@
             </ul>
           </div>
         </div>
-        <h3>Παρέχεται πλήρης τεχνικός φάκελος με:</h3>
-        <div class="doc-section">
+
+        <h3 class="section-subtitle section-subtitle--spaced">Παρέχεται πλήρης τεχνικός φάκελος με</h3>
+        <div class="doc-grid reveal">
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991112.png" alt="Τεκμηρίωση" />
+            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991112.png" alt="Τεκμηρίωση"/>
             <p>Τεκμηρίωση</p>
           </div>
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Μετρήσεις" />
+            <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Μετρήσεις"/>
             <p>Μετρήσεις</p>
           </div>
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Σχέδια" />
+            <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Σχέδια"/>
             <p>Σχέδια</p>
           </div>
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" alt="Φωτογραφίες" />
+            <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" alt="Φωτογραφίες"/>
             <p>Φωτογραφίες</p>
           </div>
         </div>
-        <a class="contact-button" href="#epikoinonia">Ζητήστε Πιστοποιητικό</a>
+        <div class="cta-center">
+          <a class="btn btn-primary" href="#contact" style="background:var(--color-primary); color:white;">Ζητήστε Πιστοποιητικό</a>
+        </div>
       </section>
 
-      <!-- Φωτογραφίες Έργων (Greek) -->
-      <section>
-        <h2>Φωτογραφίες Έργων</h2>
-        <div class="gallery">
-          <div>
-            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="Ηλεκτρολογική Εγκατάσταση" />
-            <p style="text-align:center; margin-top:8px;"><strong>Ολοκληρωμένη εγκατάσταση κατοικίας</strong></p>
+      <!-- Gallery -->
+      <section data-section="gallery">
+        <div class="section-header reveal">
+          <span class="section-label">Portfolio</span>
+          <h2>Φωτογραφίες Έργων</h2>
+        </div>
+        <div class="gallery reveal">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ηλεκτρολογική Εγκατάσταση"/>
+            <div class="gallery-caption">Ολοκληρωμένη εγκατάσταση κατοικίας</div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="Σύστημα Συναγερμού" />
-            <p style="text-align:center; margin-top:8px;"><strong>Σύστημα συναγερμού με αισθητήρες</strong></p>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Σύστημα Συναγερμού"/>
+            <div class="gallery-caption">Σύστημα συναγερμού με αισθητήρες</div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="KNX Αυτοματισμοί" />
-            <p style="text-align:center; margin-top:8px;"><strong>Πίνακας αυτοματισμών KNX</strong></p>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="KNX Αυτοματισμοί"/>
+            <div class="gallery-caption">Πίνακας αυτοματισμών KNX</div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="Φωτοβολταϊκά Συστήματα" />
-            <p style="text-align:center; margin-top:8px;"><strong>Φωτοβολταϊκή εγκατάσταση στέγης</strong></p>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Φωτοβολταϊκά"/>
+            <div class="gallery-caption">Φωτοβολταϊκή εγκατάσταση στέγης</div>
           </div>
         </div>
       </section>
 
-      <!-- Σχετικά με Εμένα (Greek) -->
-      <section>
-        <h2>Σχετικά με Εμένα</h2>
-        <div class="profile-section">
-          <img class="profile-img"
-     src="sarris.jpg"
-     alt="Σαρρής Χριστοφόρος" />
-
-          <div>
-            <p>
-              Είμαι πιστοποιημένος ηλεκτρολόγος με έδρα τον Άγιο Νικόλαο Κρήτης και πολυετή εμπειρία στον χώρο των ηλεκτρολογικών εγκαταστάσεων,
-              των αυτοματισμών και των φωτοβολταϊκών. Προσφέρω ολοκληρωμένες λύσεις για σπίτια και επιχειρήσεις, με έμφαση στην ασφάλεια,
-              την αξιοπιστία και την ποιότητα κατασκευής.
-            </p>
-            <div style="margin-top: 15px;">
-              <span class="cert-badge">Πιστοποιημένος Ηλεκτρολόγος</span>
-              <span class="cert-badge">Εγκεκριμένος Ελεγκτής</span>
-              <span class="cert-badge">KNX Certified</span>
-              <span class="cert-badge">Φωτοβολταϊκά Συστήματα</span>
+      <!-- About -->
+      <section data-section="about">
+        <div class="section-header reveal">
+          <span class="section-label">Γνωρίστε με</span>
+          <h2>Σχετικά με Εμένα</h2>
+        </div>
+        <div class="about-block reveal">
+          <img class="profile-img" src="sarris.jpg" alt="Σαρρής Χριστοφόρος"/>
+          <div class="about-text">
+            <p>Είμαι πιστοποιημένος ηλεκτρολόγος με έδρα τον Άγιο Νικόλαο Κρήτης και πολυετή εμπειρία στον χώρο των ηλεκτρολογικών εγκαταστάσεων, των αυτοματισμών και των φωτοβολταϊκών. Προσφέρω ολοκληρωμένες λύσεις για σπίτια και επιχειρήσεις, με έμφαση στην ασφάλεια, την αξιοπιστία και την ποιότητα κατασκευής.</p>
+            <div class="cert-badges">
+              <span class="badge-outline">Πιστοποιημένος Ηλεκτρολόγος</span>
+              <span class="badge-outline">Εγκεκριμένος Ελεγκτής</span>
+              <span class="badge-outline">KNX Certified</span>
+              <span class="badge-outline">Φωτοβολταϊκά Συστήματα</span>
             </div>
-            <p style="margin-top: 15px;">
-              Με ιδιαίτερη προσοχή στην ποιότητα και την ασφάλεια, κάθε έργο εκτελείται με ακρίβεια και σε συμφωνία με όλες τις ισχύουσες προδιαγραφές.
-            </p>
+            <p>Με ιδιαίτερη προσοχή στην ποιότητα και την ασφάλεια, κάθε έργο εκτελείται με ακρίβεια και σε συμφωνία με όλες τις ισχύουσες προδιαγραφές.</p>
           </div>
         </div>
       </section>
 
-      <!-- Επικοινωνία (Greek) -->
-      <section id="epikoinonia">
-        <h2>Επικοινωνία</h2>
-        <div style="display: flex; gap: 20px;">
-          <div style="flex: 1;">
-            <p>📍 Άγιος Νικόλαος Κρήτης, 72100</p>
-            <p>📞 <a href="tel:+306948598823">+30 694 859 8823</a></p>
-            <p>📧 <a href="mailto:sarrisxristoforos@gmail.com">sarrisxristoforos@gmail.com</a></p>
-            <div style="margin-top: 20px;">
-              <a class="contact-button" href="tel:+306948598823">Καλέστε Τώρα</a>
-              <a class="contact-button" href="https://wa.me/306948598823">WhatsApp</a>
-              <a class="contact-button" href="viber://chat?number=+306948598823">Viber</a>
+      <!-- Contact -->
+      <section data-section="contact">
+        <div class="section-header reveal">
+          <span class="section-label">Επικοινωνία</span>
+          <h2>Επικοινωνήστε μαζί μου</h2>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Στοιχεία Επικοινωνίας</h3>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">📍</span>
+              <span>Άγιος Νικόλαος Κρήτης, 72100</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">📞</span>
+              <a href="tel:+306948598823">+30 694 859 8823</a>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">📧</span>
+              <a href="mailto:sarrisxristoforos@gmail.com">sarrisxristoforos@gmail.com</a>
+            </div>
+            <div class="contact-buttons">
+              <a class="btn btn-primary" href="tel:+306948598823">Καλέστε Τώρα</a>
+              <a class="btn btn-outline" href="https://wa.me/306948598823">WhatsApp</a>
+              <a class="btn btn-outline" href="viber://chat?number=+306948598823">Viber</a>
             </div>
           </div>
-          <div style="flex: 1;">
+          <div class="contact-form-card">
+            <h3>Στείλτε μήνυμα</h3>
             <form action="mailto:sarrisxristoforos@gmail.com" enctype="text/plain" method="post">
-              <input name="name" placeholder="Όνομα" required type="text"/>
-              <input name="email" placeholder="Email" required type="email"/>
-              <input name="phone" placeholder="Τηλέφωνο" type="tel"/>
-              <textarea name="message" placeholder="Μήνυμα" required rows="5"></textarea>
-              <button type="submit">Αποστολή</button>
+              <div class="form-group">
+                <label for="name-el">Όνομα</label>
+                <input id="name-el" name="name" required type="text" placeholder="Το όνομά σας"/>
+              </div>
+              <div class="form-group">
+                <label for="email-el">Email</label>
+                <input id="email-el" name="email" required type="email" placeholder="email@example.com"/>
+              </div>
+              <div class="form-group">
+                <label for="phone-el">Τηλέφωνο</label>
+                <input id="phone-el" name="phone" type="tel" placeholder="+30 694 ..."/>
+              </div>
+              <div class="form-group">
+                <label for="message-el">Μήνυμα</label>
+                <textarea id="message-el" name="message" required rows="5" placeholder="Πώς μπορώ να σας βοηθήσω;"></textarea>
+              </div>
+              <button class="btn-submit" type="submit">Αποστολή</button>
             </form>
           </div>
         </div>
       </section>
 
-      <!-- Χάρτης (Greek) -->
-      <section>
-        <h2>Χάρτης</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12969.904861996542!2d25.7131666!3d35.1930491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5b0b4a6b79d1%3A0x400bd2ce2be1a20!2zzpXOtc6xzq_Ouc6zIM6fzrnOrM65zr3PhM6uzrHOu86zzrXPhM65zr_PgiDPhM68zrHOu865zrfPhM65zr_OvQ!5e0!3m2!1sel!2sgr!4v1711550945847"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          style="border:0; border-radius:10px;">
-        </iframe>
+      <!-- Map -->
+      <section data-section="map">
+        <div class="section-header reveal">
+          <h2>Χάρτης</h2>
+        </div>
+        <div class="map-wrapper reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12969.904861996542!2d25.7131666!3d35.1930491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5b0b4a6b79d1%3A0x400bd2ce2be1a20!2zzpXOtc6xzq_Ouc6zIM6fzrnOrM65zr3PhM6uzrHOu86zzrXPhM65zr_PgiDPhM68zrHOu865zrfPhM65zr_OvQ!5e0!3m2!1sel!2sgr!4v1711550945847"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Χάρτης – Άγιος Νικόλαος Κρήτης">
+          </iframe>
+        </div>
       </section>
 
-    </div> <!-- /lang-el -->
+    </main>
+  </div>
 
+  <!-- ═══════════════ ENGLISH ═══════════════ -->
+  <div class="lang lang-en">
 
-    <!-- ============= [lang-en]: Αγγλικά ============= -->
-    <div class="lang lang-en">
+    <header class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-badge">Agios Nikolaos, Crete</span>
+        <h1>Sarris Christoforos</h1>
+        <p>Electrical Installations – Automations – Photovoltaics</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#contact">Get in Touch</a>
+          <a class="btn btn-outline" href="#services">My Services</a>
+        </div>
+      </div>
+    </header>
 
-      <!-- Smart Home (English) -->
-      <section>
-        <h2>Smart Home</h2>
-        <div class="service-card">
-          <p>Comprehensive solutions for a smart home with apps and voice control. Turn your house into a modern, automatic, and energy-efficient space using the latest automation technologies.</p>
+    <main>
 
-          <img src="header-smart-house.jpg"
-               alt="Smart Home"
-               class="smart-home-img" />
+      <section data-section="smart-home">
+        <div class="section-header reveal">
+          <span class="section-label">Automations</span>
+          <h2>Smart Home</h2>
+          <p>Comprehensive solutions with apps and voice control for a modern, automatic, and energy-efficient home.</p>
+        </div>
 
-          <h3 style="margin-top: 25px;">Where we can apply automations:</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/4277/4277376.png"
-                   alt="Lighting" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Smart lighting (app control, scheduling, motion sensors)
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/1629/1629571.png"
-                   alt="Plugs" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Smart plugs and electrical devices
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/6511/6511850.png"
-                   alt="Curtains" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Automatic blinds and windows
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/4276/4276167.png"
-                   alt="Heating" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Smart heating and air conditioning
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/2730/2730421.png"
-                   alt="Audio" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Audio and entertainment systems
-            </li>
-            <li>
-              <img src="https://cdn-icons-png.flaticon.com/512/2977/2977123.png"
-                   alt="Security" style="width:24px; vertical-align:middle; margin-right:8px;">
-              Security and surveillance systems
-            </li>
-          </ul>
-
-          <h3>Technologies we use:</h3>
-          <div class="tech-badges">
-            <span class="cert-badge">KNX</span>
-            <span class="cert-badge">Z-Wave</span>
-            <span class="cert-badge">Zigbee</span>
-            <span class="cert-badge">Wi-Fi</span>
-            <span class="cert-badge">Google Home</span>
-            <span class="cert-badge">Amazon Alexa</span>
-            <span class="cert-badge">Apple HomeKit</span>
-            <span class="cert-badge">Home Assistant</span>
+        <div class="smart-intro reveal">
+          <img src="header-smart-house.jpg" alt="Smart Home" class="smart-intro-img"/>
+          <div class="smart-intro-text">
+            <p>Turn your house into a modern, automatic, and energy-efficient space using the latest automation technologies.</p>
           </div>
         </div>
-      </section>
 
-      <!-- Services (English) -->
-      <section>
-        <h2>Services</h2>
-        <div class="service-card">
-          <h3>Electrical Installations</h3>
-          <p>Complete electrical installations for homes and businesses, following safety standards.</p>
-          <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Electrical Installations"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
+        <h3 class="section-subtitle">Where we can apply automations</h3>
+        <div class="feature-grid reveal">
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/4277/4277376.png" alt=""/></div>
+            <span>Smart lighting (app control, scheduling, motion sensors)</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/1629/1629571.png" alt=""/></div>
+            <span>Smart plugs and electrical devices</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/6511/6511850.png" alt=""/></div>
+            <span>Automatic blinds and windows</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/4276/4276167.png" alt=""/></div>
+            <span>Smart heating and air conditioning</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/2730/2730421.png" alt=""/></div>
+            <span>Audio and entertainment systems</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/2977/2977123.png" alt=""/></div>
+            <span>Security and surveillance systems</span>
+          </div>
         </div>
 
-        <div class="service-card">
-          <h3>Alarm Systems</h3>
-          <p>Installation and maintenance of alarm systems, using both wireless and wired technologies.</p>
-          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Alarm Systems"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Security Cameras (CCTV)</h3>
-          <p>High-definition surveillance systems with remote access capabilities.</p>
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Security Cameras"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Automations – KNX</h3>
-          <p>Smart automation solutions for lighting, air conditioning, and shading systems.</p>
-          <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="KNX Automations"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Photovoltaic Systems</h3>
-          <p>Design and installation of photovoltaic systems for residential and commercial use.</p>
-          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Photovoltaic Systems"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
-        </div>
-
-        <div class="service-card">
-          <h3>Energy Upgrades</h3>
-          <p>Improve energy efficiency using modern technologies and materials.</p>
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-               alt="Energy Upgrades"
-               style="width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:15px;" />
+        <h3 class="section-subtitle section-subtitle--spaced">Technologies we use</h3>
+        <div class="tech-badges tech-badges--center reveal">
+          <span class="badge">KNX</span>
+          <span class="badge">Z-Wave</span>
+          <span class="badge">Zigbee</span>
+          <span class="badge">Wi-Fi</span>
+          <span class="badge">Google Home</span>
+          <span class="badge">Amazon Alexa</span>
+          <span class="badge">Apple HomeKit</span>
+          <span class="badge">Home Assistant</span>
         </div>
       </section>
 
-      <!-- Electrical Inspections (English) -->
-      <section>
-        <h2>Electrical Inspections</h2>
-        <div style="display: flex; gap: 20px; margin-bottom: 20px;">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-               alt="Electrical Inspection"
-               style="width: 300px; border-radius: 10px;" />
+      <section data-section="services">
+        <div class="section-header reveal">
+          <span class="section-label">What I offer</span>
+          <h2>Services</h2>
+          <p>Complete electrical solutions for homes and businesses.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Electrical Installations"/>
+            <div class="card-body">
+              <h3>Electrical Installations</h3>
+              <p>Complete electrical installations for homes and businesses, following safety standards.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Alarm Systems"/>
+            <div class="card-body">
+              <h3>Alarm Systems</h3>
+              <p>Installation and maintenance of alarm systems, using both wireless and wired technologies.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Security Cameras"/>
+            <div class="card-body">
+              <h3>Security Cameras (CCTV)</h3>
+              <p>High-definition surveillance systems with remote access capabilities.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="KNX Automations"/>
+            <div class="card-body">
+              <h3>Automations – KNX</h3>
+              <p>Smart automation solutions for lighting, air conditioning, and shading systems.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Photovoltaic Systems"/>
+            <div class="card-body">
+              <h3>Photovoltaic Systems</h3>
+              <p>Design and installation of photovoltaic systems for residential and commercial use.</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Energy Upgrades"/>
+            <div class="card-body">
+              <h3>Energy Upgrades</h3>
+              <p>Improve energy efficiency using modern technologies and materials.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section data-section="inspections">
+        <div class="section-header reveal">
+          <span class="section-label">Certificates</span>
+          <h2>Electrical Inspections</h2>
+        </div>
+
+        <div class="inspection-block reveal">
+          <img class="inspection-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electrical Inspection"/>
           <div>
-            <p>
-              I undertake the issuance of Electrician Certificates (Y.D.E.) according to <strong>ELOT HD 384</strong> for residential and commercial installations. These inspections are essential for:
-            </p>
-            <ul>
+            <p>I undertake the issuance of Electrician Certificates (Y.D.E.) according to <strong>ELOT HD 384</strong> for residential and commercial installations. These inspections are essential for:</p>
+            <ul class="check-list">
               <li>New power connection</li>
               <li>Reconnection due to disconnection</li>
               <li>Meter name change</li>
@@ -594,143 +479,154 @@
             </ul>
           </div>
         </div>
-        <h3>A complete technical file includes:</h3>
-        <div class="doc-section">
+
+        <h3 class="section-subtitle section-subtitle--spaced">A complete technical file includes</h3>
+        <div class="doc-grid reveal">
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991112.png" alt="Documentation" />
+            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991112.png" alt="Documentation"/>
             <p>Documentation</p>
           </div>
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Measurements" />
+            <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Measurements"/>
             <p>Measurements</p>
           </div>
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Plans" />
+            <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Plans"/>
             <p>Plans</p>
           </div>
           <div class="doc-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" alt="Photos" />
+            <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" alt="Photos"/>
             <p>Photos</p>
           </div>
         </div>
-        <a class="contact-button" href="#epikoinonia">Request Certificate</a>
+        <div class="cta-center">
+          <a class="btn btn-primary" href="#contact" style="background:var(--color-primary); color:white;">Request Certificate</a>
+        </div>
       </section>
 
-      <!-- Projects Photos (English) -->
-      <section>
-        <h2>Project Photos</h2>
-        <div class="gallery">
-          <div>
-            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="Electrical Installation" />
-            <p style="text-align:center; margin-top:8px;"><strong>Complete home installation</strong></p>
+      <section data-section="gallery">
+        <div class="section-header reveal">
+          <span class="section-label">Portfolio</span>
+          <h2>Project Photos</h2>
+        </div>
+        <div class="gallery reveal">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electrical Installation"/>
+            <div class="gallery-caption">Complete home installation</div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="Alarm System" />
-            <p style="text-align:center; margin-top:8px;"><strong>Alarm system with sensors</strong></p>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Alarm System"/>
+            <div class="gallery-caption">Alarm system with sensors</div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="KNX Automations" />
-            <p style="text-align:center; margin-top:8px;"><strong>KNX automation panel</strong></p>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="KNX Automations"/>
+            <div class="gallery-caption">KNX automation panel</div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                 alt="Photovoltaic Systems" />
-            <p style="text-align:center; margin-top:8px;"><strong>Rooftop photovoltaic installation</strong></p>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Photovoltaic Systems"/>
+            <div class="gallery-caption">Rooftop photovoltaic installation</div>
           </div>
         </div>
       </section>
 
-      <!-- About Me (English) -->
-      <section>
-        <h2>About Me</h2>
-        <div class="profile-section">
-          <img class="profile-img"
-     src="sarris.jpg"
-     alt="Σαρρής Χριστοφόρος" />
-
-          <div>
-            <p>
-              I am a certified electrician based in Agios Nikolaos, Crete, with many years of experience in electrical installations,
-              automation, and photovoltaics. I provide comprehensive solutions for homes and businesses, emphasizing safety,
-              reliability, and top-quality construction.
-            </p>
-            <div style="margin-top: 15px;">
-              <span class="cert-badge">Certified Electrician</span>
-              <span class="cert-badge">Approved Inspector</span>
-              <span class="cert-badge">KNX Certified</span>
-              <span class="cert-badge">Photovoltaic Systems</span>
+      <section data-section="about">
+        <div class="section-header reveal">
+          <span class="section-label">About</span>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-block reveal">
+          <img class="profile-img" src="sarris.jpg" alt="Sarris Christoforos"/>
+          <div class="about-text">
+            <p>I am a certified electrician based in Agios Nikolaos, Crete, with many years of experience in electrical installations, automation, and photovoltaics. I provide comprehensive solutions for homes and businesses, emphasizing safety, reliability, and top-quality construction.</p>
+            <div class="cert-badges">
+              <span class="badge-outline">Certified Electrician</span>
+              <span class="badge-outline">Approved Inspector</span>
+              <span class="badge-outline">KNX Certified</span>
+              <span class="badge-outline">Photovoltaic Systems</span>
             </div>
-            <p style="margin-top: 15px;">
-              With particular attention to quality and safety, each project is executed meticulously and in accordance with all relevant standards.
-            </p>
+            <p>With particular attention to quality and safety, each project is executed meticulously and in accordance with all relevant standards.</p>
           </div>
         </div>
       </section>
 
-      <!-- Contact (English) -->
-      <section id="epikoinonia">
-        <h2>Contact</h2>
-        <div style="display: flex; gap: 20px;">
-          <div style="flex: 1;">
-            <p>📍 Agios Nikolaos, Crete, 72100</p>
-            <p>📞 <a href="tel:+306948598823">+30 694 859 8823</a></p>
-            <p>📧 <a href="mailto:sarrisxristoforos@gmail.com">sarrisxristoforos@gmail.com</a></p>
-            <div style="margin-top: 20px;">
-              <a class="contact-button" href="tel:+306948598823">Call Now</a>
-              <a class="contact-button" href="https://wa.me/306948598823">WhatsApp</a>
-              <a class="contact-button" href="viber://chat?number=+306948598823">Viber</a>
+      <section data-section="contact">
+        <div class="section-header reveal">
+          <span class="section-label">Contact</span>
+          <h2>Get in Touch</h2>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Contact Details</h3>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">📍</span>
+              <span>Agios Nikolaos, Crete, 72100</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">📞</span>
+              <a href="tel:+306948598823">+30 694 859 8823</a>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">📧</span>
+              <a href="mailto:sarrisxristoforos@gmail.com">sarrisxristoforos@gmail.com</a>
+            </div>
+            <div class="contact-buttons">
+              <a class="btn btn-primary" href="tel:+306948598823">Call Now</a>
+              <a class="btn btn-outline" href="https://wa.me/306948598823">WhatsApp</a>
+              <a class="btn btn-outline" href="viber://chat?number=+306948598823">Viber</a>
             </div>
           </div>
-          <div style="flex: 1;">
+          <div class="contact-form-card">
+            <h3>Send a Message</h3>
             <form action="mailto:sarrisxristoforos@gmail.com" enctype="text/plain" method="post">
-              <input name="name" placeholder="Name" required type="text"/>
-              <input name="email" placeholder="Email" required type="email"/>
-              <input name="phone" placeholder="Phone" type="tel"/>
-              <textarea name="message" placeholder="Message" required rows="5"></textarea>
-              <button type="submit">Send</button>
+              <div class="form-group">
+                <label for="name-en">Name</label>
+                <input id="name-en" name="name" required type="text" placeholder="Your name"/>
+              </div>
+              <div class="form-group">
+                <label for="email-en">Email</label>
+                <input id="email-en" name="email" required type="email" placeholder="email@example.com"/>
+              </div>
+              <div class="form-group">
+                <label for="phone-en">Phone</label>
+                <input id="phone-en" name="phone" type="tel" placeholder="+30 694 ..."/>
+              </div>
+              <div class="form-group">
+                <label for="message-en">Message</label>
+                <textarea id="message-en" name="message" required rows="5" placeholder="How can I help you?"></textarea>
+              </div>
+              <button class="btn-submit" type="submit">Send</button>
             </form>
           </div>
         </div>
       </section>
 
-      <!-- Map (English) -->
-      <section>
-        <h2>Map</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12969.904861996542!2d25.7131666!3d35.1930491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5b0b4a6b79d1%3A0x400bd2ce2be1a20!2sAgios%20Nikolaos%2C%20Crete!5e0!3m2!1sel!2sgr!4v1711550945847"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          style="border:0; border-radius:10px;">
-        </iframe>
+      <section data-section="map">
+        <div class="section-header reveal">
+          <h2>Map</h2>
+        </div>
+        <div class="map-wrapper reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12969.904861996542!2d25.7131666!3d35.1930491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5b0b4a6b79d1%3A0x400bd2ce2be1a20!2sAgios%20Nikolaos%2C%20Crete!5e0!3m2!1sel!2sgr!4v1711550945847"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map – Agios Nikolaos, Crete">
+          </iframe>
+        </div>
       </section>
 
-    </div> <!-- /lang-en -->
-
-  </div> <!-- /container -->
+    </main>
+  </div>
 
   <footer>
-    © 2025 Σαρρής Χριστοφόρος. All rights reserved.
+    © 2026 Σαρρής Χριστοφόρος. All rights reserved.
   </footer>
 
-  <!-- SCRIPT: ορισμός της συνάρτησης αλλαγής γλώσσας ΣΤΟ ΤΕΛΟΣ -->
-  <script>
-    function changeLanguage(selectedLang) {
-      // Απόκρυψη όλων των στοιχείων με κλάση .lang
-      const allLangSections = document.querySelectorAll('.lang');
-      allLangSections.forEach(section => {
-        section.style.display = 'none';
-      });
+  <div class="fab" aria-label="Γρήγορη επικοινωνία">
+    <a class="fab-whatsapp" href="https://wa.me/306948598823" aria-label="WhatsApp" title="WhatsApp">💬</a>
+    <a class="fab-phone" href="tel:+306948598823" aria-label="Τηλέφωνο" title="Κλήση">📞</a>
+  </div>
 
-      // Εμφάνιση μόνο όσων έχουν την κλάση της επιλεγμένης γλώσσας
-      const currentLangSections = document.querySelectorAll('.' + selectedLang);
-      currentLangSections.forEach(section => {
-        section.style.display = 'block';
-      });
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
