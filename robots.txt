@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://papazachariakis.github.io/sarris-site/sitemap.xml
