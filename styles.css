@@ -717,8 +717,10 @@ section {
 
 .smart-intro-img {
   width: 100%;
-  height: clamp(180px, 40vw, 320px);
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
 }
 
 .smart-intro-text {
