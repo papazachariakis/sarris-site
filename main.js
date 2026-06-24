@@ -86,14 +86,14 @@
   const savedTheme = localStorage.getItem(THEME_KEY);
   if (savedTheme === "dark" || savedTheme === "light") {
     setTheme(savedTheme);
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  } else {
     setTheme("dark");
   }
 
   const themeToggle = document.querySelector(".theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
-      const current = document.documentElement.getAttribute("data-theme") || "light";
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
       setTheme(current === "dark" ? "light" : "dark");
     });
   }
