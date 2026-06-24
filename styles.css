@@ -1101,6 +1101,12 @@ section {
   font-weight: 500;
 }
 
+.phone-label {
+  font-size: 0.85em;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
 .contact-detail a:hover {
   color: var(--color-accent);
 }

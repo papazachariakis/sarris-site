@@ -230,8 +230,8 @@
           if (status) {
             status.className = "form-status form-status--error";
             status.textContent = isEl
-              ? "Σφάλμα αποστολής. Καλέστε μας στο +30 694 859 8823."
-              : "Send failed. Please call us at +30 694 859 8823.";
+              ? "Σφάλμα αποστολής. Καλέστε μας: +30 694 859 8823 ή +30 28410 234448."
+              : "Send failed. Please call: +30 694 859 8823 or +30 28410 234448.";
           }
         })
         .finally(function () {
