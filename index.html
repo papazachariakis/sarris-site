@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <meta name="description" content="Σαρρής Χριστοφόρος – Πιστοποιημένος ηλεκτρολόγος στον Άγιο Νικόλαο Κρήτης. Ηλεκτρολογικές εγκαταστάσεις, αυτοματισμοί KNX, φωτοβολταϊκά, smart home, ενοικίαση γεννητριών."/>
-  <meta name="theme-color" content="#0b1410"/>
+  <meta name="theme-color" content="#030508"/>
   <meta property="og:title" content="Σαρρής Χριστοφόρος | Ηλεκτρολόγος – Αυτοματισμοί – Φωτοβολταϊκά"/>
   <meta property="og:description" content="Πιστοποιημένος ηλεκτρολόγος στον Άγιο Νικόλαο Κρήτης. Smart home, KNX, φωτοβολταϊκά, ενοικίαση γεννητριών, επανελέγχους ΕΛΟΤ HD 384."/>
   <meta property="og:type" content="website"/>
@@ -21,8 +21,9 @@
   <link rel="preload" href="header-smart-house.jpg" as="image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="tech-theme.css"/>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,7 +47,13 @@
   }
   </script>
 </head>
-<body>
+<body class="tech-ui">
+
+  <div class="tech-bg" aria-hidden="true">
+    <div class="tech-grid"></div>
+    <div class="tech-glow tech-glow--1"></div>
+    <div class="tech-glow tech-glow--2"></div>
+  </div>
 
   <!-- Navigation -->
   <nav class="navbar" aria-label="Κύρια πλοήγηση">
@@ -86,9 +93,9 @@
     <header class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-content">
-        <span class="hero-badge">Άγιος Νικόλαος Κρήτης</span>
-        <h1>Σαρρής Χριστοφόρος</h1>
-        <p>Ηλεκτρολόγος Εγκαταστάσεων – Αυτοματισμοί – Φωτοβολταϊκά</p>
+        <span class="hero-badge"><span class="hero-badge-dot"></span>Άγιος Νικόλαος Κρήτης</span>
+        <h1 class="hero-title">Σαρρής <span class="hero-title-accent">Χριστοφόρος</span></h1>
+        <p class="hero-tagline">Ηλεκτρολόγος Εγκαταστάσεων · Αυτοματισμοί · Φωτοβολταϊκά · Smart Energy</p>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#contact">Επικοινωνήστε μαζί μου</a>
           <a class="btn btn-outline" href="#services">Οι Υπηρεσίες μου</a>
@@ -489,9 +496,9 @@
     <header class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-content">
-        <span class="hero-badge">Agios Nikolaos, Crete</span>
-        <h1>Sarris Christoforos</h1>
-        <p>Electrical Installations – Automations – Photovoltaics</p>
+        <span class="hero-badge"><span class="hero-badge-dot"></span>Agios Nikolaos, Crete</span>
+        <h1 class="hero-title">Sarris <span class="hero-title-accent">Christoforos</span></h1>
+        <p class="hero-tagline">Electrical Installations · Automations · Photovoltaics · Smart Energy</p>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#contact">Get in Touch</a>
           <a class="btn btn-outline" href="#services">My Services</a>
