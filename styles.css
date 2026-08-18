@@ -18,9 +18,10 @@
   --nav-height: 72px;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --font: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
-  --page-padding: clamp(16px, 4.5vw, 28px);
-  --content-max: 1200px;
+  --page-padding: clamp(16px, 4.5vw, 40px);
+  --content-max: min(100%, 1400px);
   --section-gap: clamp(40px, 8vw, 72px);
+  --text-measure: min(68ch, 100%);
 }
 
 [data-theme="dark"] {
@@ -74,6 +75,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-height) + 16px);
   overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -85,6 +87,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
   width: 100%;
+  max-width: 100%;
 }
 
 img {
@@ -107,6 +110,8 @@ a:hover {
 .lang {
   display: none;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: clip;
 }
 .lang.lang-el { display: block; }
@@ -324,8 +329,9 @@ a:hover {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: min(780px, 100%);
+  max-width: min(860px, 100%);
   width: 100%;
+  min-width: 0;
   color: white;
   padding: 0 4px;
 }
@@ -354,10 +360,8 @@ a:hover {
 .hero p {
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   opacity: 0.92;
-  margin: 0 0 32px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 32px;
+  max-width: min(62ch, 100%);
 }
 
 .hero-buttons {
@@ -366,6 +370,7 @@ a:hover {
   gap: 12px;
   justify-content: center;
   width: 100%;
+  min-width: 0;
 }
 
 .btn {
@@ -455,7 +460,7 @@ a:hover {
 /* Trust bar */
 .trust-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(12px, 2.5vw, 16px);
   max-width: var(--content-max);
   width: 100%;
@@ -475,6 +480,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
   transition: transform var(--transition);
 }
 
@@ -501,16 +507,16 @@ a:hover {
 .section-alt {
   background: rgba(15, 107, 58, 0.04);
   border-radius: var(--radius-lg);
-  padding-left: clamp(12px, 3vw, 24px);
-  padding-right: clamp(12px, 3vw, 24px);
-  margin-left: calc(-1 * clamp(12px, 3vw, 24px));
-  margin-right: calc(-1 * clamp(12px, 3vw, 24px));
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  margin-left: calc(-1 * var(--page-padding));
+  margin-right: calc(-1 * var(--page-padding));
 }
 
 /* Why us */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(16px, 3vw, 20px);
 }
 
@@ -520,6 +526,7 @@ a:hover {
   border-radius: var(--radius-md);
   padding: clamp(22px, 4vw, 28px);
   box-shadow: var(--shadow-sm);
+  min-width: 0;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
@@ -554,7 +561,7 @@ a:hover {
 /* Process */
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(20px, 4vw, 32px);
   counter-reset: step;
 }
@@ -635,7 +642,7 @@ a:hover {
   margin: 0;
   opacity: 0.9;
   font-size: clamp(0.9rem, 2.2vw, 1rem);
-  max-width: 480px;
+  max-width: min(48ch, 100%);
 }
 
 .cta-banner-actions {
@@ -678,6 +685,7 @@ a:hover {
 main {
   max-width: var(--content-max);
   width: 100%;
+  min-width: 0;
   margin: 0 auto;
   padding: 0 var(--page-padding) clamp(40px, 8vw, 60px);
 }
@@ -689,7 +697,7 @@ section {
 
 .section-header {
   text-align: center;
-  max-width: min(640px, 100%);
+  max-width: var(--text-measure);
   margin: 0 auto clamp(28px, 6vw, 48px);
   padding: 0 4px;
 }
@@ -727,6 +735,7 @@ section {
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  min-width: 0;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -760,7 +769,7 @@ section {
 /* Services grid – min() prevents horizontal overflow on narrow screens */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(16px, 3vw, 24px);
   width: 100%;
 }
@@ -796,7 +805,7 @@ section {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(12px, 2.5vw, 16px);
   margin: clamp(20px, 4vw, 32px) 0;
   width: 100%;
@@ -986,7 +995,7 @@ section {
 /* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(12px, 2.5vw, 20px);
   width: 100%;
 }
@@ -1060,7 +1069,7 @@ section {
 /* Contact */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(20px, 4vw, 32px);
   width: 100%;
 }
@@ -1276,9 +1285,10 @@ textarea {
 
 .footer-inner {
   max-width: var(--content-max);
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(28px, 5vw, 40px);
   padding-bottom: clamp(28px, 5vw, 40px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -1619,7 +1629,7 @@ footer {
   font-size: 0.875rem;
   color: var(--color-text-muted);
   flex: 1;
-  min-width: 200px;
+  min-width: min(100%, 200px);
 }
 
 .cookie-actions {
@@ -1667,6 +1677,51 @@ footer {
 }
 
 /* ── Responsive ── */
+@media (min-width: 640px) {
+  .why-grid,
+  .services-grid,
+  .feature-grid,
+  .gallery,
+  .process-steps,
+  .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .trust-bar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .why-grid,
+  .process-steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid,
+  .feature-grid,
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --content-max: min(100%, 1520px);
+    --page-padding: clamp(28px, 4vw, 64px);
+  }
+}
+
 @media (max-width: 900px) {
   :root {
     --nav-height: 64px;
@@ -1759,12 +1814,6 @@ footer {
 
   .hero-buttons .btn {
     width: 100%;
-  }
-
-  .services-grid,
-  .feature-grid,
-  .gallery {
-    grid-template-columns: 1fr;
   }
 
   .contact-buttons {

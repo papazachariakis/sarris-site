@@ -51,20 +51,41 @@
 
   <div class="tech-bg" aria-hidden="true">
     <div class="tech-grid"></div>
+    <div class="tech-hex"></div>
     <div class="tech-glow tech-glow--1"></div>
     <div class="tech-glow tech-glow--2"></div>
+    <div class="tech-glow tech-glow--3"></div>
     <svg class="tech-circuits" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
       <path class="circuit-path" d="M80 120 H320 V280 H540 V160 H820"/>
       <path class="circuit-path circuit-path--delay" d="M1360 80 V240 H1100 V420 H860"/>
       <path class="circuit-path" d="M40 720 H260 V540 H480 V680 H760"/>
       <path class="circuit-path circuit-path--delay" d="M1400 780 H1080 V560 H900 V640"/>
+      <path class="circuit-path circuit-path--bus" d="M60 450 H380 L440 390 H700 L760 450 H1040 L1100 390 H1380"/>
+      <path class="circuit-path circuit-path--spark" d="M720 160 L760 220 L700 280 L780 340 L740 400"/>
+      <polygon class="circuit-hex" points="540,268 556,277 556,295 540,304 524,295 524,277"/>
+      <polygon class="circuit-hex circuit-hex--delay" points="1100,228 1116,237 1116,255 1100,264 1084,255 1084,237"/>
+      <polygon class="circuit-hex" points="760,438 778,448 778,468 760,478 742,468 742,448"/>
+      <g class="solar-burst" transform="translate(1180 140)">
+        <circle class="circuit-node circuit-node--spark" r="5"/>
+        <path class="solar-ray" d="M0 -10 V-26 M8 -8 L18 -20 M10 0 H26 M8 8 L18 20 M0 10 V26 M-8 8 L-18 20 M-10 0 H-26 M-8 -8 L-18 -20"/>
+      </g>
+      <g class="solar-burst solar-burst--delay" transform="translate(220 560)">
+        <circle class="circuit-node circuit-node--spark" r="4"/>
+        <path class="solar-ray" d="M0 -8 V-20 M7 -6 L15 -16 M8 0 H20 M7 6 L15 16 M0 8 V20 M-7 6 L-15 16 M-8 0 H-20 M-7 -6 L-15 -16"/>
+      </g>
       <circle class="circuit-node" cx="320" cy="120" r="4"/>
       <circle class="circuit-node" cx="540" cy="280" r="4"/>
       <circle class="circuit-node circuit-node--delay" cx="1100" cy="240" r="4"/>
       <circle class="circuit-node" cx="260" cy="720" r="4"/>
       <circle class="circuit-node circuit-node--delay" cx="1080" cy="780" r="4"/>
+      <circle class="circuit-node circuit-node--spark" cx="760" cy="450" r="4"/>
     </svg>
     <canvas id="tech-particles"></canvas>
+  </div>
+
+  <div id="tech-cursor" hidden aria-hidden="true">
+    <span class="tech-cursor-core"></span>
+    <span class="tech-cursor-ring"></span>
   </div>
 
   <!-- Navigation -->
@@ -107,10 +128,19 @@
         <div class="hero-energy"></div>
         <div class="hero-scanlines"></div>
       </div>
+      <div class="hero-hud" aria-hidden="true">
+        <span class="hero-hud-label">SARRIS ENERGY // SYSTEM ONLINE</span>
+        <span class="hero-hud-meta">KNX · PV · 230V</span>
+      </div>
       <div class="hero-content">
         <span class="hero-badge"><span class="hero-badge-dot"></span>Άγιος Νικόλαος Κρήτης</span>
-        <h1 class="hero-title">Σαρρής <span class="hero-title-accent">Χριστοφόρος</span></h1>
+        <h1 class="hero-title">Σαρρής <span class="hero-title-accent" data-glitch="Χριστοφόρος">Χριστοφόρος</span></h1>
         <p class="hero-tagline">Ηλεκτρολόγος Εγκαταστάσεων · Αυτοματισμοί · Φωτοβολταϊκά · Smart Energy</p>
+        <div class="hero-voltage" aria-hidden="true">
+          <span class="hero-voltage-cap">GRID</span>
+          <div class="hero-voltage-track"><span class="hero-voltage-fill"></span></div>
+          <span class="hero-voltage-readout">230V</span>
+        </div>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#contact">Επικοινωνήστε μαζί μου</a>
           <a class="btn btn-outline" href="#services">Οι Υπηρεσίες μου</a>
@@ -513,10 +543,19 @@
         <div class="hero-energy"></div>
         <div class="hero-scanlines"></div>
       </div>
+      <div class="hero-hud" aria-hidden="true">
+        <span class="hero-hud-label">SARRIS ENERGY // SYSTEM ONLINE</span>
+        <span class="hero-hud-meta">KNX · PV · 230V</span>
+      </div>
       <div class="hero-content">
         <span class="hero-badge"><span class="hero-badge-dot"></span>Agios Nikolaos, Crete</span>
-        <h1 class="hero-title">Sarris <span class="hero-title-accent">Christoforos</span></h1>
+        <h1 class="hero-title">Sarris <span class="hero-title-accent" data-glitch="Christoforos">Christoforos</span></h1>
         <p class="hero-tagline">Electrical Installations · Automations · Photovoltaics · Smart Energy</p>
+        <div class="hero-voltage" aria-hidden="true">
+          <span class="hero-voltage-cap">GRID</span>
+          <div class="hero-voltage-track"><span class="hero-voltage-fill"></span></div>
+          <span class="hero-voltage-readout">230V</span>
+        </div>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#contact">Get in Touch</a>
           <a class="btn btn-outline" href="#services">My Services</a>

@@ -81,6 +81,8 @@
         ? (isGreek() ? "Φωτεινό θέμα" : "Light mode")
         : (isGreek() ? "Σκοτεινό θέμα" : "Dark mode"));
     }
+    const cursor = document.getElementById("tech-cursor");
+    if (cursor && theme !== "dark") cursor.hidden = true;
   }
 
   const savedTheme = localStorage.getItem(THEME_KEY);
@@ -349,11 +351,17 @@
     let raf = 0;
     let width = 0;
     let height = 0;
+    let scrollDepth = 0;
 
     function count() {
       const area = width * height;
-      const n = Math.round(area / 18000);
-      return Math.max(28, Math.min(n, 90));
+      const n = Math.round(area / 14000);
+      return Math.max(36, Math.min(n, 110));
+    }
+
+    function updateScroll() {
+      const h = Math.max(window.innerHeight, 1);
+      scrollDepth = Math.min(1, window.scrollY / (h * 0.85));
     }
 
     function resize() {
@@ -384,8 +392,12 @@
         return;
       }
 
-      const maxDist = 130;
-      for (let i = 0; i < particles.length; i++) {
+      const intensity = 1 - scrollDepth * 0.62;
+      const maxDist = 88 + 72 * intensity;
+      const visible = Math.max(16, Math.floor(particles.length * (0.4 + 0.6 * intensity)));
+      canvas.style.opacity = String(0.32 + 0.38 * intensity);
+
+      for (let i = 0; i < visible; i++) {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
@@ -402,18 +414,24 @@
           }
         }
 
+        const spark = i % 8 === 0;
         ctx.beginPath();
-        ctx.fillStyle = i % 3 === 0 ? "rgba(0,230,118,0.85)" : "rgba(0,229,255,0.8)";
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = spark
+          ? "rgba(255,179,0,0.9)"
+          : (i % 3 === 0 ? "rgba(0,230,118,0.85)" : "rgba(0,229,255,0.8)");
+        ctx.arc(p.x, p.y, spark ? p.r + 0.4 : p.r, 0, Math.PI * 2);
         ctx.fill();
 
-        for (let j = i + 1; j < particles.length; j++) {
+        for (let j = i + 1; j < visible; j++) {
           const q = particles[j];
           const dx = p.x - q.x;
           const dy = p.y - q.y;
           const dist = Math.hypot(dx, dy);
           if (dist < maxDist) {
-            ctx.strokeStyle = "rgba(0,229,255," + (0.16 * (1 - dist / maxDist)) + ")";
+            const a = (0.18 * intensity * (1 - dist / maxDist)).toFixed(3);
+            ctx.strokeStyle = spark
+              ? "rgba(255,179,0," + a + ")"
+              : "rgba(0,229,255," + a + ")";
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -426,6 +444,7 @@
     }
 
     window.addEventListener("resize", resize);
+    window.addEventListener("scroll", updateScroll, { passive: true });
     window.addEventListener("pointermove", function (e) {
       pointer.x = e.clientX;
       pointer.y = e.clientY;
@@ -438,7 +457,49 @@
       }
     });
 
+    updateScroll();
     resize();
     raf = requestAnimationFrame(draw);
+  })();
+
+  /* ── Cursor glow (dark theme, fine pointers only) ── */
+  (function initCursorGlow() {
+    const el = document.getElementById("tech-cursor");
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (!window.matchMedia("(hover: hover)").matches) return;
+
+    let x = 0;
+    let y = 0;
+    let tx = 0;
+    let ty = 0;
+
+    function isDark() {
+      return document.documentElement.getAttribute("data-theme") === "dark";
+    }
+
+    window.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "touch") {
+        el.hidden = true;
+        return;
+      }
+      tx = e.clientX;
+      ty = e.clientY;
+      el.hidden = !isDark();
+    }, { passive: true });
+
+    window.addEventListener("pointerleave", function () {
+      el.hidden = true;
+    });
+
+    function loop() {
+      x += (tx - x) * 0.2;
+      y += (ty - y) * 0.2;
+      el.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+      requestAnimationFrame(loop);
+    }
+
+    requestAnimationFrame(loop);
   })();
 })();
