@@ -185,7 +185,7 @@
   setupScrollSpy();
 
   /* ── Contact forms (FormSubmit) ── */
-  const formEmail = cfg.formEmail || "sarrisxristoforos@gmail.com";
+  const formEmail = cfg.formEmail || "sarrisenergy@gmail.com";
 
   document.querySelectorAll(".contact-form").forEach(function (form) {
     form.addEventListener("submit", function (e) {
@@ -230,8 +230,8 @@
           if (status) {
             status.className = "form-status form-status--error";
             status.textContent = isEl
-              ? "Σφάλμα αποστολής. Καλέστε μας: +30 694 859 8823 ή +30 28410 234448."
-              : "Send failed. Please call: +30 694 859 8823 or +30 28410 234448.";
+              ? "Σφάλμα αποστολής. Καλέστε μας: +30 694 859 8823 ή +30 2841 234448."
+              : "Send failed. Please call: +30 694 859 8823 or +30 2841 234448.";
           }
         })
         .finally(function () {
