@@ -100,20 +100,14 @@
   background:
     linear-gradient(180deg, rgba(3, 5, 8, 0.55) 0%, rgba(3, 5, 8, 0.88) 100%),
     linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, transparent 40%, rgba(0, 230, 118, 0.1) 100%);
+  z-index: 1;
 }
 
 [data-theme="dark"] .hero-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 229, 255, 0.015) 2px,
-    rgba(0, 229, 255, 0.015) 4px
-  );
-  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="dark"] .hero-bg::after {
   z-index: 1;
 }
 
@@ -396,11 +390,112 @@
   box-shadow: 0 0 28px rgba(0, 230, 118, 0.45);
 }
 
+#tech-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+.tech-circuits {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+}
+
+.circuit-path {
+  fill: none;
+  stroke: #00e5ff;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: square;
+  stroke-dasharray: 18 220;
+  animation: circuit-flow 8s linear infinite;
+  filter: drop-shadow(0 0 6px #00e5ff);
+}
+
+.circuit-path--delay {
+  stroke: #00e676;
+  animation-duration: 11s;
+  animation-delay: -3s;
+}
+
+.circuit-node {
+  fill: #00e5ff;
+  filter: drop-shadow(0 0 8px #00e5ff);
+  animation: tech-blink 2.4s ease-in-out infinite;
+}
+
+.circuit-node--delay {
+  fill: #00e676;
+  animation-delay: -1.2s;
+}
+
+@keyframes circuit-flow {
+  to { stroke-dashoffset: -480; }
+}
+
+.hero-energy,
+.hero-scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-energy {
+  background:
+    linear-gradient(115deg, transparent 42%, rgba(0, 229, 255, 0.08) 50%, transparent 58%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(0, 230, 118, 0.18), transparent 70%);
+  background-size: 220% 100%, 100% 100%;
+  animation: energy-sweep 7s ease-in-out infinite;
+}
+
+.hero-scanlines {
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 3px,
+    rgba(0, 229, 255, 0.035) 3px 4px
+  );
+  mix-blend-mode: screen;
+  animation: scan-move 9s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes energy-sweep {
+  0%, 100% { background-position: 0% 0, 0 0; }
+  50% { background-position: 100% 0, 0 0; }
+}
+
+@keyframes scan-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(12px); }
+}
+
+[data-theme="light"] .tech-circuits,
+[data-theme="light"] #tech-particles,
+[data-theme="light"] .hero-energy,
+[data-theme="light"] .hero-scanlines {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tech-glow,
   .hero-badge-dot,
   .hero-title-accent,
+  .circuit-path,
+  .circuit-node,
+  .hero-energy,
+  .hero-scanlines,
   [data-theme="dark"] .nav-brand-icon {
     animation: none;
+  }
+
+  #tech-particles,
+  .tech-circuits {
+    display: none;
   }
 }
