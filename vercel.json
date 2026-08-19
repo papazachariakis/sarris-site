@@ -13,14 +13,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "sarrisenergy.com" }],
-      "destination": "https://sarrisenergy.gr/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.sarrisenergy.com" }],
-      "destination": "https://sarrisenergy.gr/:path*",
+      "destination": "https://sarrisenergy.com/:path*",
       "permanent": true
     }
   ]
